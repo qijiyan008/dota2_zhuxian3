@@ -1,0 +1,8 @@
+"CustomHeroList"
+{
+	"npc_dota_hero_storm_spirit"			"-1"
+	"npc_dota_hero_ember_spirit"			"-1"
+	"npc_dota_hero_juggernaut"              "-1"
+	"npc_dota_hero_brewmaster"              "-1"
+	"npc_dota_hero_lina"					"-1"
+}

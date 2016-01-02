@@ -1,5 +1,6 @@
 if shuaguai == nil then
   shuaguai = {}
+  shuaguai.base=nil
 
 end
 function shuaguai:Shuaguaiinit()
@@ -40,6 +41,7 @@ function shuaguai:Shuaguaiinit()
   ShuaGuai_count=60
   GameRules.ShuaGuai_num=0
   ShuaGuai_entity[1]=Entities:FindByName(nil,"spawn_enemy_attack_top")
+  shuaguai.base=Entities:FindByName(nil,"zhuxian3_base")
    Timers:CreateTimer(0, function()
     print("start shuaguai bo ="..GameRules.ShuaGuai_bo+1)
      shuaguai:ShuaGuai()
@@ -71,6 +73,20 @@ function shuaguai:ShuaGuaifun( entityname , num)
           --添加相位移动的modifier，持续时间0.2秒
           --当相位移动的modifier消失，系统会自动计算碰撞，这样就避免了卡位
           unit:AddNewModifier(nil, nil, "modifier_phased", {duration=0.1})
+          unit:SetContextThink(DoUniqueString("AttackingBase"), 
+        function ()
+          if IsValidEntity(shuaguai.base) == false then return nil end
+          local newOrder = {
+          UnitIndex = unit:entindex(), 
+          OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+           TargetIndex = nil, --Optional.  Only used when targeting units
+          AbilityIndex = 0, --Optional.  Only used when casting abilities
+          Position = shuaguai.base:GetOrigin() , --Optional.  Only used when targeting the ground
+          Queue = 0 --Optional.  Used for queueing up abilities
+          }
+          ExecuteOrderFromTable(newOrder)
+          return 6
+        end, 0) 
         end
         -- 循环刷近战和远程兵
         if i<30 then

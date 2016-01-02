@@ -1,15 +1,44 @@
-// Dota Heroes File
-// NOTE: This is not for creating new heroes, this is for taking a currently existing hero as a template and overriding
-// the specified key-value combinations.  Use override_hero <hero_to_override> for this.
 "DOTAHeroes"
 {
-	//=================================================================================================================
-	// HERO: Templar Assassin
-	//=================================================================================================================
-	"npc_dota_hero_templar_assassin_template"
-	{
-		"override_hero"				"npc_dota_hero_templar_assassin"			// Hero to override
-		"Ability1"					"templar_assassin_refraction_holdout"		// Ability 1
-		"VisionNighttimeRange"		"1800"										// Range of vision at night time.
-	}
+    //=================================================================================================================
+    // HERO: QC_chunyang
+    //=================================================================================================================
+    "ZX_ljy"
+    {
+        "AbilityLayout"             "5"
+        "override_hero"             "npc_dota_hero_storm_spirit"            // Hero to override
+      
+    }
+    "JG_fenzhongzhuodao"
+    {
+        "AbilityLayout"             "5"
+        "override_hero"             "npc_dota_hero_ember_spirit"            // Hero to override
+
+    }
+     "JG_jianwuji"
+    {
+        "AbilityLayout"             "6"
+        "override_hero"             "npc_dota_hero_juggernaut"            // Hero to override
+
+    }
+       "JG_qiaorulai"
+    {
+        "AbilityLayout"             "5"
+        "override_hero"             "npc_dota_hero_brewmaster"            // Hero to override
+   
+    }
+    "JG_chiyu"
+    {
+    
+        "AbilityLayout"             "5"
+        "override_hero"             "npc_dota_hero_lina"            // Hero to override
+
+    }
+    
+    
 }
+  //"Ability1"                  "QC_liangyi_02"                 // Ability 1
+  //      "Ability2"                  "QC_bagua_01"                   // Ability 2
+  //      "Ability3"                  "QC_shengtaiji_02"                  // Ability 2
+   //     "Ability4"                  "QC_ziqidonglai_01"                 // Ability 2
+   //     "Ability5"                  "normalability_tobase"  
